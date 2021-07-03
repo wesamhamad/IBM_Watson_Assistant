@@ -33,11 +33,13 @@ https://user-images.githubusercontent.com/74800962/124358745-5784f300-dc2a-11eb-
 * Entity (2)
 * 
 ![Screen Shot 1442-11-23 at 6 21 03 PM](https://user-images.githubusercontent.com/74800962/124359072-fcec9680-dc2b-11eb-91e5-9807229c295d.jpg)
-![n](https://user-images.githubusercontent.com/74800962/124359168-7be1cf00-dc2c-11eb-9b89-3e4926e4a7ca.jpg)
 ---
 **NOTE:**
+
 I add child node and customized it as Multipule responses (If you enable multiple responses then your bot can provide different responses to the same input, based on other conditions ), then I made the parent node jump to child node when the condition is met.
----
+
+![n](https://user-images.githubusercontent.com/74800962/124359168-7be1cf00-dc2c-11eb-9b89-3e4926e4a7ca.jpg)
+
 ![Screen Shot 1442-11-23 at 6 21 20 PM](https://user-images.githubusercontent.com/74800962/124359076-0118b400-dc2c-11eb-9962-56853cedf00d.jpg)
 
 ## View the chatbot as a json file
