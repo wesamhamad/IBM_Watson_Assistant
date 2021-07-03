@@ -19,7 +19,9 @@ Take a short tutorial of IBM Watson Assistant chatbot technology. You'll create 
 
 # " Fango " my IBM Watson Assistant (Sample Output)
 
+
 * Desck top view
+
 
 
 https://user-images.githubusercontent.com/74800962/124358551-82bb1280-dc29-11eb-97f7-5a43e0ecc849.mov
@@ -28,7 +30,7 @@ https://user-images.githubusercontent.com/74800962/124358551-82bb1280-dc29-11eb-
 
 https://user-images.githubusercontent.com/74800962/124358745-5784f300-dc2a-11eb-9d14-f20aee35eba8.mov
 
-## Fango's Dialog  
+## Fango's Dialogs  
 * Intents (8)
 * Entity (2)
  
