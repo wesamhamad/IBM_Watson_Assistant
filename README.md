@@ -42,5 +42,22 @@ I add child node and customized it as Multipule responses (If you enable multipl
 
 ![Screen Shot 1442-11-23 at 6 21 20 PM](https://user-images.githubusercontent.com/74800962/124359076-0118b400-dc2c-11eb-9962-56853cedf00d.jpg)
 
-## View the chatbot as a json file
+## </> Embed on my website
+After I have finished build a web chat integration, the Watson Assistant UI gives me a small embed code to add it to my website.
+```javascript
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "45fc2050-7955-43c3-9957-35fc21c27d85", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "b7623134-fcde-4d2a-811b-a586272aadcc", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+```
+## View the chatbot as a [json file](https://github.com/wesamhamad/IBM_Waston_Assistant/blob/main/skill-Fango.json)
 ## You can try [my chatbot](https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=bd3a93c1-cf1b-41d9-96df-49e004bf46be&serviceInstanceID=b7623134-fcde-4d2a-811b-a586272aadcc) 
