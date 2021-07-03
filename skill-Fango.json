@@ -1,0 +1,793 @@
+{
+  "intents": [
+    {
+      "intent": "Bye",
+      "examples": [
+        {
+          "text": "Bye"
+        },
+        {
+          "text": "have a good day"
+        },
+        {
+          "text": "see you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Hallo"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hullo"
+        },
+        {
+          "text": "Welcome"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "No",
+      "examples": [
+        {
+          "text": "NO"
+        },
+        {
+          "text": "nop"
+        },
+        {
+          "text": "not interested"
+        },
+        {
+          "text": "Not sure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Robot",
+      "examples": [
+        {
+          "text": "Company's Robots"
+        },
+        {
+          "text": "How many robots the company made?"
+        },
+        {
+          "text": "Tell me about your robots"
+        },
+        {
+          "text": "What robots the company made?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "services",
+      "examples": [
+        {
+          "text": "more"
+        },
+        {
+          "text": "ser"
+        },
+        {
+          "text": "Services"
+        },
+        {
+          "text": "What are the company's services?"
+        },
+        {
+          "text": "What are your services?"
+        },
+        {
+          "text": "what do you do ?"
+        },
+        {
+          "text": "what do you have ?"
+        },
+        {
+          "text": "what do you offer ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thanks",
+      "examples": [
+        {
+          "text": "good"
+        },
+        {
+          "text": "Gracias"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank u"
+        },
+        {
+          "text": "Thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "What",
+      "examples": [
+        {
+          "text": "smart methods"
+        },
+        {
+          "text": "what"
+        },
+        {
+          "text": "what can i ask"
+        },
+        {
+          "text": "what is robot control?"
+        },
+        {
+          "text": "what is this?"
+        },
+        {
+          "text": "what is this page?"
+        },
+        {
+          "text": "what smart methods"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Yes",
+      "examples": [
+        {
+          "text": "of course"
+        },
+        {
+          "text": "sure"
+        },
+        {
+          "text": "Y"
+        },
+        {
+          "text": "yah"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "yup"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Answers",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "NO",
+          "synonyms": [
+            "hardly",
+            "I dont think",
+            "little",
+            "neither",
+            "never",
+            "nobody",
+            "none",
+            "nop",
+            "not",
+            "not interested",
+            "not sure"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Yes",
+          "synonyms": [
+            "absolutely",
+            "definitely",
+            "muh",
+            "of course",
+            "okay",
+            "really",
+            "sure",
+            "tah",
+            "truly",
+            "tuh",
+            "utterly",
+            "Y",
+            "yah",
+            "yup"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "service",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Achievements",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Contact Us",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Our Clients",
+          "synonyms": [
+            "Clients",
+            "customers",
+            "work with"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Our Robots",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Ambassador Of Smart Methods",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Website",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_6_1625264199088",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Answers by genre",
+      "parent": "node_8_1625241707653",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Answers",
+      "dialog_node": "node_10_1625241851869"
+    },
+    {
+      "type": "standard",
+      "title": "Question",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is a web page to control theFighting robot, affiliate of the smart methods company."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "It is the first project we work on",
+            "source": "https://f.top4top.io/p_2009zb3cg1.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " Do you want to know more about us?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#What",
+      "dialog_node": "node_4_1625234602651",
+      "previous_sibling": "node_9_1625241037310"
+    },
+    {
+      "type": "standard",
+      "title": "Service options",
+      "output": {
+        "generic": [
+          {
+            "title": "What do you want to know more about us ?",
+            "options": [
+              {
+                "label": "Our Robot",
+                "value": {
+                  "input": {
+                    "text": "Our Robot"
+                  }
+                }
+              },
+              {
+                "label": "Our Clients",
+                "value": {
+                  "input": {
+                    "text": "Our Clients"
+                  }
+                }
+              },
+              {
+                "label": "Achievements",
+                "value": {
+                  "input": {
+                    "text": "Achievements"
+                  }
+                }
+              },
+              {
+                "label": "The Ambassador Of Smart Methods",
+                "value": {
+                  "input": {
+                    "text": "The Ambassador Of Smart Methods"
+                  }
+                }
+              },
+              {
+                "label": "Website",
+                "value": {
+                  "input": {
+                    "text": "Website"
+                  }
+                }
+              },
+              {
+                "label": "Contact Us",
+                "value": {
+                  "input": {
+                    "text": "Contact Us"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1625256888776",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_8_1625253210533"
+      },
+      "conditions": "#services",
+      "dialog_node": "node_5_1625237098936"
+    },
+    {
+      "type": "standard",
+      "title": "Bye",
+      "output": {
+        "generic": [
+          {
+            "title": "Hope you have a nice day ❤️",
+            "source": "https://i.imgur.com/0z6A6tc.gif",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Bye",
+      "dialog_node": "node_6_1625264199088",
+      "previous_sibling": "node_9_1625258629418"
+    },
+    {
+      "type": "standard",
+      "title": "Answers",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "------------------------------------------"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1625241851869"
+      },
+      "conditions": "#Yes || #No",
+      "dialog_node": "node_8_1625241707653",
+      "previous_sibling": "node_4_1625234602651"
+    },
+    {
+      "type": "standard",
+      "title": "Services genre",
+      "parent": "node_5_1625237098936",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1625237098936"
+      },
+      "conditions": "@service",
+      "dialog_node": "node_8_1625253210533"
+    },
+    {
+      "type": "standard",
+      "title": "Servises",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We offer you under one roof everything that the innovator needs from electronics, mechanics, rights to register ownership of the idea, patents  and training and interactive workshops for innovators and inventors.\n\nIn addition :\n-Manufacture of robots according to customer's request.\n-3D printing.\n-Programming smart phone applications according to the customer's request."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#services",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1625256888776",
+      "previous_sibling": "node_8_1625241707653"
+    },
+    {
+      "type": "standard",
+      "title": "Greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome , I'm your assistant Fango you can starts asking me what is this page ? "
+              },
+              {
+                "text": "Welcome , I'm your assistant Fango ,you can starts asking me what is this page ? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_9_1625241037310",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Thank_you",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you! I'm glad I was able to help."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thanks",
+      "dialog_node": "node_9_1625258629418",
+      "previous_sibling": "node_8_1625256888776"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The Smart Methods Ambassadors program allows you to get a percentage of the profits by publishing educational workshops and smart methods products .\nAmbassadors of smart methods are allowed to participate in the projects we are working on in robotics and artificial intelligence Also, active ambassadors will be given priority in recruitment.\nClick on the link to subscribe: https://www.s-m.com.sa/c/new.html"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:(The Ambassador Of Smart Methods)",
+      "dialog_node": "response_10_1625257229173",
+      "previous_sibling": "response_1_1625257036995"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "https://j.top4top.io/p_2009ueup81.png",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:(Our Clients)",
+      "dialog_node": "response_1_1625257036995",
+      "previous_sibling": "response_2_1625254666331"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Smart Methods : is a national commercial enterprise established in 2010, registered with the Ministry of Commerce and specialized in automated equipment, robotics and artificial intelligence. It is the first commercial facility of its kind in the service of researchers and innovators in the Arab world and is classified by Forbes magazine as one of the most innovative companies in the Kingdom of Saudi Arabia in the latest classification 2015. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://www.s-m.com.sa/images/logo.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Write -more- to know about our services"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1625241851869",
+      "conditions": "@Answers:Yes",
+      "dialog_node": "response_2_1625241966276"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "https://s-m.com.sa/index.html"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:Website",
+      "dialog_node": "response_2_1625254666331",
+      "previous_sibling": "response_3_1625254573708"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We have a Coffee Serving Robot, Customer Service Robot and we work on 4 projects on this summer . \n main project :  "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "",
+            "source": "https://f.top4top.io/p_2009zb3cg1.jpg",
+            "description": " -Fighting Robots. ",
+            "response_type": "image"
+          },
+          {
+            "title": "side projects: ",
+            "source": "https://f.top4top.io/p_20092zugk3.jpg",
+            "description": "-Robot Arm. ",
+            "response_type": "image"
+          },
+          {
+            "source": "https://d.top4top.io/p_2009mz1s01.jpg",
+            "description": "-Customer service Robot. ",
+            "response_type": "image"
+          },
+          {
+            "source": "https://e.top4top.io/p_2009foa4i2.jpg",
+            "description": "-Close chin Robot .",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:(Our Robots)",
+      "dialog_node": "response_3_1625254573708"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Are you sure? you losing a lot !! \nLet me tell u a little about it if u interested continue ..\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Smart Methods : is a national commercial enterprise established in 2010, registered with the Ministry of Commerce and specialized in automated equipment, robotics and artificial intelligence. It is the first commercial facility of its kind in the service of researchers and innovators in the Arab world and is classified by Forbes magazine as one of the most innovative companies in the Kingdom of Saudi Arabia in the latest classification 2015.\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://www.s-m.com.sa/images/logo.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Write -more- to know about our services"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1625241851869",
+      "conditions": "@Answers:NO",
+      "dialog_node": "response_8_1625242002944",
+      "previous_sibling": "response_2_1625241966276"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "https://k.top4top.io/p_2009fpkin2.png",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:Achievements",
+      "dialog_node": "response_9_1625258524119",
+      "previous_sibling": "response_10_1625257229173"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "contact address:\n Saudi Arabia - Makkah Headquarter Office - Butha Quraish - Main street - Almudaa Building - Office No.7\n  Sales Branch - Misfalah - Alkenkariah Street - Afwaj Al-Tawba Hotel - Exhibition No.4  \nReception Branch - Wadi Makkah - Company Building - Office No.6  \nEmail: info@s-m.com.sa \nNumber: 0580202718 For employment:‏job@s-m.com.sa"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625253210533",
+      "conditions": "@service:(Contact Us)",
+      "dialog_node": "response_9_1625260080905",
+      "previous_sibling": "response_9_1625258524119"
+    },
+    {
+      "type": "standard",
+      "title": "Wlcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello,I'm your assistant Fango  you can starts asking me what is this page ? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://jungleworks.com/wp-content/uploads/2021/04/1_9I6EIL5NG20A8se5afVmOg.gif",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Fango",
+  "language": "en",
+  "description": ""
+}
