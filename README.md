@@ -17,7 +17,7 @@ A chatbot is a support system for your customer service. Using artificial intell
 Take a short tutorial of IBM Watson Assistant chatbot technology. You'll create intents and entities and learn how to structure your chatbot conversational flow.
 [Step-by-step tutorial](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started) .
 
-# " Fango " my IBM Watson Assistant (Sample Output)
+# " Fango " my IBM Watson Assistant (Output Samples)
 
 
 * Tablets view
