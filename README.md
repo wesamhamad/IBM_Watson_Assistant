@@ -1,4 +1,4 @@
-# Enhance the user experience by Building a chatbots with IBM Watson Assistant
+# Enhance the user experience by Building a chatbot with IBM Watson Assistant
 In this code pattern, we walk you through a working example of a web page (ROBOT CONTROL) that utilizes  Watson services to create a better customer care experience.
 By using Watson Assistant, we will give customers the answers they need quickly, easily and across any channel. 
 
